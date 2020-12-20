@@ -8,17 +8,17 @@ import './Header.css';
 
 const useStyles = makeStyles((theme) => ({
     small: {
-      width: theme.spacing(3),
-      height: theme.spacing(3),
+        width: theme.spacing(3),
+        height: theme.spacing(3),
     }
-  }));
+}));
 const Header = () => {
     const classes = useStyles();
     return (
         <>
             <div className="header">
                 <div className="header__left">
-                    <Avatar className={classes.small}/>
+                    <Avatar className={classes.small} />
                     <AccessTimeIcon />
                 </div>
                 <div className="header__search">
