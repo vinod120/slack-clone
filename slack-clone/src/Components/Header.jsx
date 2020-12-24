@@ -4,7 +4,8 @@ import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import Badge from '@material-ui/core/Badge';
 import Avatar from '@material-ui/core/Avatar';
 import { withStyles } from '@material-ui/core/styles';
-import './Header.css'
+import './Header.css';
+
 const StyledBadge = withStyles((theme) => ({
     badge: {
         backgroundColor: '#44b700',
@@ -33,36 +34,30 @@ const StyledBadge = withStyles((theme) => ({
         },
     },
 }))(Badge);
-
 const Header = () => {
     return (
         <>
-            <div className="header">
-                <div className="header__left"></div>
-                <div className="header__center">
-                    <div className="history__icon">
+            <div>
+                <div className="header">
+                    <div className="header__left"></div>
+                    <div className="header__center">
                         <AccessTimeIcon />
-                    </div>
-                    <div className="header__search">
-                        <input placeholder="Search ..." />
-                    </div>
-                    <div className="help__icon">
+                        <input type="text" placeholder="Search......." />
                         <HelpOutlineIcon />
                     </div>
+                    <div className="header__right">
+                        <StyledBadge
+                            overlap="circle"
+                            anchorOrigin={{
+                                vertical: 'bottom',
+                                horizontal: 'right',
+                            }}
+                            variant="dot"
+                        >
+                            <Avatar variant="square" className="avatar" style={{ borderRadius: '5px', height: '30px', width: '30px' }} />
+                        </StyledBadge>
+                    </div>
                 </div>
-                <div className="header__right">
-                    <StyledBadge
-                        overlap="circle"
-                        anchorOrigin={{
-                            vertical: 'bottom',
-                            horizontal: 'right',
-                        }}
-                        variant="dot"
-                    >
-                        <Avatar variant="square" className="avatar" style={{ borderRadius: '5px', height: '30px', width: '30px' }} />
-                    </StyledBadge>
-                </div>
-
             </div>
         </>
     )
