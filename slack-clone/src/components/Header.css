@@ -8,6 +8,12 @@
     height: 5vh;
 }
 
+.header_avatar{
+    width: 30px;
+    height: 30px;
+    border-radius: 999px;
+}
+
 .header_left{
     flex: 0.3;
     display: flex;

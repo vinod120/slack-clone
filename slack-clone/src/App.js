@@ -1,13 +1,24 @@
+import React, { useState } from 'react';
 import './App.css';
 import Header from './components/Header';
 import { Sidebar } from './components/Sidebar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Chat from './components/Chat';
+import Login from './components/Login';
+import {useStateValue} from './components/StateProvider';
 function App() {
+
+  const [{user}, dispatch] = useStateValue();
   return (
     <div className="App">
-      <h1>Slack clone</h1>
+      {/* <h1>Slack clone</h1> */}
       <Router>
+        {/* user login */}
+        {
+          !user ? (
+            <Login />
+          ) : (
+          <>
         {/* <Header /> */}
         <Header />
         <div className="app_body">
@@ -25,6 +36,8 @@ function App() {
             </Route>
           </Switch>
         </div>
+      </>
+      )}
       </Router>
 
     </div>

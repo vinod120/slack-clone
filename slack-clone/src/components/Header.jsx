@@ -4,13 +4,17 @@ import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import SearchIcon from '@material-ui/icons/Search';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import './Header.css';
+import { useStateValue } from './StateProvider';
+
 export default function Header() {
+    const [{ user }] = useStateValue();
     return (
         <>
             <div className="header">
                 <div className="header_left">
                     {/* Avatar for logged in user */}
-                    <Avatar className="header_avatar" alt="avatar_login"/>
+                    <img className="header_avatar" alt={user?.displayname}
+                        src={user?.photoURL}/>
                     {/* Time Icon */}
                     <AccessTimeIcon />
                 </div>
@@ -18,7 +22,7 @@ export default function Header() {
                     {/* Search icon */}
                     <SearchIcon />
                     {/* input */}
-                    <input type="text" placeholder="vinod slack-clone"/>
+                    <input type="text" placeholder="vinod slack-clone" />
                 </div>
                 <div className="header_right">
                     {/* help icon */}
